@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Fiction>
+    <Book1 Title="Brothers Karamazov">
+        <Author>
+            <Name1>Fyodor Dostoesky</Name1>
+            <Name2></Name2>
+        </Author>
+        <genre>psychological</genre> 
+        <theme>Craving for Faith</theme>
+    </Book1>
+    <Book2 Title="The Talisman">
+        <Author>
+            <Name1>Stephen King</Name1>
+            <Name2>Peter Straub</Name2>
+        </Author>
+        <genre>horror</genre> 
+        <theme>Coming of Age</theme>
+    </Book2>
+    <Book3 Title="The Great Gatsby">
+        <Author>
+            <Name1>F Scott Fitzgerald</Name1>
+            <Name2></Name2>
+        </Author>
+        <genre>tragedy</genre> 
+        <theme>Society and Class</theme>
+    </Book3>
+</Fiction>
+
+
+
+
+
+
