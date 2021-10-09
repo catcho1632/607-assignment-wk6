@@ -1,0 +1,61 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+# Data 607 Assignment, Week 6
+## by Catherine Cho
+
+### For this assignment, I created three different files using HTML, XML, and JSON to store information about my three favorite fictional novels. The following content will load the information from each file type into their respective R dataframes. 
+
+#### 1.JSON
+
+##### The following .json file is read from github then parsed into a dataframe. 
+![books.json](https://raw.githubusercontent.com/catcho1632/607-assignment-wk6/main/jsonpic.jpg){width=45%}
+
+```{r}
+library(rjson)
+library(jsonlite)
+url<-"https://raw.githubusercontent.com/catcho1632/607-assignment-wk6/main/books.json"
+parsedJSON<-fromJSON(url)
+jsondf<-parsedJSON$Fiction
+jsondf<-as.data.frame(jsondf)
+jsondf
+```
+
+#### 2. HTML
+
+##### The follwing books.html code is read in from github  then parsed into a dataframe.
+
+![books.html](https://raw.githubusercontent.com/catcho1632/607-assignment-wk6/main/htmlpic.jpg){width=40%}
+
+```{r}
+library(RCurl)
+library(XML)
+html_raw<-getURL("https://raw.githubusercontent.com/catcho1632/607-assignment-wk6/main/books.html")
+htmldf<-readHTMLTable(html_raw)
+htmldf
+```
+#### 3. XML 
+
+##### The following XML file is read in from github then parsed into a dataframe. 
+
+![books.xml](https://raw.githubusercontent.com/catcho1632/607-assignment-wk6/main/xmlpic.jpg){width=40%}
+
+```{r}
+library(httr)
+library(curl)
+library(XML)
+library(RCurl)
+url_raw<-getURL("https://raw.githubusercontent.com/catcho1632/607-assignment-wk6/main/books.xml")
+xmldf<-xmlToDataFrame(url_raw)
+xmldf
+```
+
+#### All three dataframes generated from XML, JSON, and HTML are identical as shown below. 
+
+```{r}
+jsondf
+htmldf
+xmldf
+```
